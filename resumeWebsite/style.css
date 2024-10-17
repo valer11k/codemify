@@ -202,6 +202,28 @@ body {
     background-color:  #a5e1f5;
 }
 
+.contact {
+    padding: 1px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 35px;
+    color: #256d85;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.linkedInLogo {
+    width: 50px;
+    height: 50px;
+}
+
  
 
 
