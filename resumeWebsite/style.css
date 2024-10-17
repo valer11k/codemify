@@ -117,12 +117,14 @@ body {
     padding:5px 25px;
     background-color:#f7f8fc;
 }
+
 .experience h2{
     text-align:center;
     font-size:40px;
     color:#256d85;
     margin-bottom: 30px;
 }
+
 .job{
     background-color:#ffffff;
     padding:20px 30px;
@@ -130,25 +132,74 @@ body {
     border-radius:8px;
     box-shadow: 0px 4px 8px rgba(88, 60, 60, 0.1);
 }
+
 .job h3{
     font-size:29px;
     color:#256d85;
     margin-bottom:10px;
 }
+
 .job p{
     font-size:16px;
     color:#666;
     margin:5px 0;
 }
+
 .responsibilities{
     padding-left:20px;
     color:#333;
     margin-top:15px;
 }
+
 .responsibilities li{
     font-size:16px;
     line-height:1.6;
     margin-bottom:8px;
+}
+
+.responsibilities {
+    padding-left: 20px;
+    list-style-type: disc;
+    color: #333;
+    margin-top: 15px;
+}
+
+.skills {
+    padding: 40px;
+    background-color: #f7f8fc;
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #256d85;
+    margin-bottom: 30px;
+}
+
+.skills ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    list-style-type: none;
+    padding: 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skills li {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(88, 60, 60, 0.1);
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.skills li:hover {
+    background-color:  #a5e1f5;
 }
 
  
