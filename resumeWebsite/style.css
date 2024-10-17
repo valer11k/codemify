@@ -17,6 +17,8 @@ body {
     padding: 25px 40px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%; 
 }
 
 .logo img {
@@ -44,6 +46,7 @@ body {
 
 .nav-links li a:hover {
     color: #219bc4;
+    text-decoration:underline;
 }
 
 /* About Section */
@@ -65,6 +68,7 @@ body {
     font-size: 3rem;
     color: #333;
     margin-bottom: 10px;
+    margin-top: 60px;
 }
 
 .about-text h2 {
@@ -107,3 +111,4 @@ body {
 .button a:hover {
     background-color: #219bc4;
 }
+
