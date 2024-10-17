@@ -16,7 +16,7 @@ body {
     align-items: center;
     padding: 25px 40px;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(88, 60, 60, 0.1);
     position: fixed;
     width: 100%; 
 }
@@ -50,13 +50,14 @@ body {
 }
 
 /* About Section */
+
 .about-section {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 60px 40px;
     gap: 150px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 8px rgba(88, 60, 60, 0.1);
 }
 
 .about-text {
@@ -65,20 +66,20 @@ body {
 }
 
 .about-text h1 {
-    font-size: 3rem;
+    font-size: 48px;
     color: #333;
     margin-bottom: 10px;
     margin-top: 60px;
 }
 
 .about-text h2 {
-    font-size: 1.5rem;
+    font-size: 24px;
     color: #256d85;
     margin-bottom: 20px;
 }
 
 .about-text p {
-    font-size: 1.3rem;
+    font-size: 22px;
     line-height: 1.75;
     color: #666;
     margin-bottom: 20px;
@@ -98,14 +99,14 @@ body {
 
 .button a {
     display: inline-block;
-    padding: 10px 20px;
+    margin-top: 5px;
+    padding: 15px 25px;
     background-color: #256d85;
     color: #ffffff;
-    text-decoration: none; /* Removes underline */
+    text-decoration: none; 
     border-radius: 120px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .button a:hover {
