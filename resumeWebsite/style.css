@@ -55,7 +55,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 40px;
+    padding: 60px 40px 40px;
     gap: 150px;
     box-shadow: 0px 4px 8px rgba(88, 60, 60, 0.1);
 }
@@ -114,14 +114,14 @@ body {
 }
 
 .experience{
-    padding:40px;
+    padding:5px 25px;
     background-color:#f7f8fc;
 }
 .experience h2{
     text-align:center;
     font-size:40px;
     color:#256d85;
-    margin-bottom:25px;
+    margin-bottom: 30px;
 }
 .job{
     background-color:#ffffff;
