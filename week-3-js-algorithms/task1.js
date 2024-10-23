@@ -3,8 +3,6 @@
 const first = 5
 const second = 4
 
-if (first > second){
-console.log('5 is bigger than 4')
-} else {
-    console.log('5 is not bigger than 4')
-};
+if (first > second) {
+    console.log('5 is bigger than 4')
+    };
