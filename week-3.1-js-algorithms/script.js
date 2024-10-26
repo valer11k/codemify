@@ -3,10 +3,10 @@
 // If the number is greater than 10, return the string "Greater than 10". If not, return the string "Not greater than 10".
 function checkGreaterTen(number) {
   if (number > 10) {
-    return "Greater than 10"
-  } else { 
-    return "Not greater than 10"
-  };
+    return "Greater than 10";
+  } else {
+    return "Not greater than 10";
+  }
 }
 console.log(checkGreaterTen(15)); // "Greater than 10"
 console.log(checkGreaterTen(5)); // "Not greater than 10"
@@ -36,10 +36,10 @@ console.log(assignGrade(75)); // "C"
 console.log(assignGrade(65)); // "D"
 console.log(assignGrade(55)); // "F"
 
-// // Challenge 3: Truncate String
-// // Write a function called truncateString that truncates a string if it is longer than the given maximum string length.
-// // The function should return the truncated string with a "..." ending.
-// // Note that the three dots at the end add to the string length.
+// Challenge 3: Truncate String
+// Write a function called truncateString that truncates a string if it is longer than the given maximum string length.
+// The function should return the truncated string with a "..." ending.
+// Note that the three dots at the end add to the string length.
 function truncateString(string, parameter) {
   if (string.length > parameter) {
     return string.slice(0, parameter - 3) + "...";
@@ -49,12 +49,20 @@ function truncateString(string, parameter) {
 console.log(truncateString("A-tisket a-tasket A green and yellow basket", 11)); // "A-tisket..."
 console.log(truncateString("Peter Piper picked a peck of pickled peppers", 14)); // "Peter Piper..."
 
-// // Challenge 4: Multi-level conditions II
-// // Write a function called checkEligibility that accepts an age and returns whether the person is eligible to vote,
-// // drive, and/or drink. If the person is 16 or older, they can drive. If they are 18 or older, they can vote.
-// // If they are 21 or older, they can drink.
+// Challenge 4: Multi-level conditions II
+// Write a function called checkEligibility that accepts an age and returns whether the person is eligible to vote,
+// drive, and/or drink. If the person is 16 or older, they can drive. If they are 18 or older, they can vote.
+// If they are 21 or older, they can drink.
 function checkEligibility(age) {
-  if ()
+  if (age < 16) {
+    return "Can't vote, drive, or drink";
+  } else if (16 <= age && age < 18) {
+    return "Can drive";
+  } else if (18 <= age && age < 21) {
+    return "Can vote and drive";
+  } else {
+    return "Can vote, drive, and drink"
+  }
 }
 // Usage examples:
 console.log(checkEligibility(15)); // "Can't vote, drive, or drink"
@@ -65,6 +73,7 @@ console.log(checkEligibility(22)); // "Can vote, drive, and drink"
 // Challenge 5: Multi-level conditions III
 // Write a function called isLeapYear that checks whether a year is a leap year. If the year is evenly divisible by 4,
 // it is a leap year, unless it is evenly divisible by 100. However, if it is divisible by 400, then it is.
+//function isLeapYear (year) 
 // Usage examples:
 // console.log(isLeapYear(2000)); // "Leap year"
 // console.log(isLeapYear(1800)); // "Not a leap year"
@@ -76,21 +85,45 @@ console.log(checkEligibility(22)); // "Can vote, drive, and drink"
 // and checks which season it is based on meteorological seasons. The function should return "Winter" for December (12),
 // January (1), and February (2), "Spring" for March (3), April (4), and May (5), "Summer" for June (6), July (7),
 // and August (8), and "Autumn" for September (9), October (10), and November (11).
+
+function checkSeason(month) {
+  if (month == 12 || month == 1 || month == 2) {
+    return "Winter"
+  } else if (month ==  3 || month == 4 || month == 5) {
+    return "Spring"
+  } else if (month ==  6 || month == 7 || month == 8) {
+    return "Summer"
+  } else {
+    return "Autumn"
+  }
+}
 // Usage examples:
-// console.log(checkSeason(1)); // "Winter"
-// console.log(checkSeason(4)); // "Spring"
-// console.log(checkSeason(7)); // "Summer"
-// console.log(checkSeason(10)); // "Autumn"
+console.log(checkSeason(1)); // "Winter"
+console.log(checkSeason(4)); // "Spring"
+console.log(checkSeason(7)); // "Summer"
+console.log(checkSeason(10)); // "Autumn"
 
 // Challenge 7: FizzBuzz Simplified
 // Write a function fizzBuzzSimplified that takes a number as an argument. If the number is divisible by 3,
 // return "Fizz". If the number is divisible by 5, return "Buzz". If the number is divisible by both 3 and 5,
 // return "FizzBuzz". If the number is not divisible by 3 or 5, return the number.
+
+function fizzBuzzSimplified (number){
+  if (number % 3 === 0 && number % 5 === 0) { 
+    return "FizzBuzz"
+  } else if (number % 5 === 0) {
+    return "Buzz"
+  } else if (number % 3 === 0) {
+    return "Fizz"
+  } else {
+    return number
+  }
+}
 // Usage examples:
-// console.log(fizzBuzzSimplified(3)); // "Fizz"
-// console.log(fizzBuzzSimplified(5)); // "Buzz"
-// console.log(fizzBuzzSimplified(15)); // "FizzBuzz"
-// console.log(fizzBuzzSimplified(2)); // 2
+console.log(fizzBuzzSimplified(3)); // "Fizz"
+console.log(fizzBuzzSimplified(5)); // "Buzz"
+console.log(fizzBuzzSimplified(15)); // "FizzBuzz"
+console.log(fizzBuzzSimplified(2)); // 2
 
 // Challenge 8: Temperature Checker
 // Write a function called checkTemp that takes a temperature in Fahrenheit as an argument.
