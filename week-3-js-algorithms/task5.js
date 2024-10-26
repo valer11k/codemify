@@ -1,5 +1,5 @@
 // Finish the function. It should accept one parameter, 'number', check if it is greater than 5 and return true or false.
-function greaterThen (number) {
+function greaterThan (number) {
     if (number > 5){
     return true;
 } else {
