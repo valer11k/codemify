@@ -61,7 +61,7 @@ function checkEligibility(age) {
   } else if (18 <= age && age < 21) {
     return "Can vote and drive";
   } else {
-    return "Can vote, drive, and drink"
+    return "Can vote, drive, and drink";
   }
 }
 // Usage examples:
@@ -73,7 +73,7 @@ console.log(checkEligibility(22)); // "Can vote, drive, and drink"
 // Challenge 5: Multi-level conditions III
 // Write a function called isLeapYear that checks whether a year is a leap year. If the year is evenly divisible by 4,
 // it is a leap year, unless it is evenly divisible by 100. However, if it is divisible by 400, then it is.
-//function isLeapYear (year) 
+//function isLeapYear (year)
 // Usage examples:
 // console.log(isLeapYear(2000)); // "Leap year"
 // console.log(isLeapYear(1800)); // "Not a leap year"
@@ -88,13 +88,13 @@ console.log(checkEligibility(22)); // "Can vote, drive, and drink"
 
 function checkSeason(month) {
   if (month == 12 || month == 1 || month == 2) {
-    return "Winter"
-  } else if (month ==  3 || month == 4 || month == 5) {
-    return "Spring"
-  } else if (month ==  6 || month == 7 || month == 8) {
-    return "Summer"
+    return "Winter";
+  } else if (month == 3 || month == 4 || month == 5) {
+    return "Spring";
+  } else if (month == 6 || month == 7 || month == 8) {
+    return "Summer";
   } else {
-    return "Autumn"
+    return "Autumn";
   }
 }
 // Usage examples:
@@ -108,15 +108,15 @@ console.log(checkSeason(10)); // "Autumn"
 // return "Fizz". If the number is divisible by 5, return "Buzz". If the number is divisible by both 3 and 5,
 // return "FizzBuzz". If the number is not divisible by 3 or 5, return the number.
 
-function fizzBuzzSimplified (number){
-  if (number % 3 === 0 && number % 5 === 0) { 
-    return "FizzBuzz"
+function fizzBuzzSimplified(number) {
+  if (number % 3 === 0 && number % 5 === 0) {
+    return "FizzBuzz";
   } else if (number % 5 === 0) {
-    return "Buzz"
+    return "Buzz";
   } else if (number % 3 === 0) {
-    return "Fizz"
+    return "Fizz";
   } else {
-    return number
+    return number;
   }
 }
 // Usage examples:
@@ -129,30 +129,72 @@ console.log(fizzBuzzSimplified(2)); // 2
 // Write a function called checkTemp that takes a temperature in Fahrenheit as an argument.
 // If the temperature is below 32, return "Freezing". If it's 32 - 50, return "Cold".
 // If it's 51 - 70, return "Mild". If it's 71 - 90, return "Warm". If it's above 90, return "Hot".
+function checkTemp(temperature) {
+  if (temperature < 32) {
+    return "Freezing";
+  } else if (temperature >= 32 && temperature <= 50) {
+    return "Cold";
+  } else if (temperature >= 51 && temperature <= 70) {
+    return "Mild";
+  } else if (temperature >= 71 && temperature <= 90) {
+    return "Warm";
+  } else {
+    return "Hot";
+  }
+}
 // Usage examples:
-// console.log(checkTemp(30)); // "Freezing"
-// console.log(checkTemp(45)); // "Cold"
-// console.log(checkTemp(65)); // "Mild"
-// console.log(checkTemp(75)); // "Warm"
-// console.log(checkTemp(95)); // "Hot"
+console.log(checkTemp(30)); // "Freezing"
+console.log(checkTemp(45)); // "Cold"
+console.log(checkTemp(65)); // "Mild"
+console.log(checkTemp(75)); // "Warm"
+console.log(checkTemp(95)); // "Hot"
 
 // Challenge 9: Traffic Sign
 // Write a function called checkSign that accepts the color of a traffic sign ("red", "yellow", "green") as an argument.
 // The function should return "Stop" if the sign is red, "Caution" if the sign is yellow, and "Go" if the sign is green.
+function checkSign(color) {
+  if (color === "red") {
+    return "Stop";
+  } else if (color === "yellow") {
+    return "Caution";
+  } else if (color === "green") {
+    return "Go";
+  }
+}
 // Usage examples:
-// console.log(checkSign("red")); // "Stop"
-// console.log(checkSign("yellow")); // "Caution"
-// console.log(checkSign("green")); // "Go"
+console.log(checkSign("red")); // "Stop"
+console.log(checkSign("yellow")); // "Caution"
+console.log(checkSign("green")); // "Go"
 
 // Challenge 10: Meal Suggestion
 // Write a function suggestMeal(time, diet) that takes a time of the day ("morning", "afternoon", "evening")
 // and a type of diet ("vegan", "vegetarian", "omnivore") as input. The function should return meal suggestions
 // based on the input parameters.
+function suggestMeal(time, diet) {
+  if (time === "morning" && diet === "vegan") {
+    return "Fruit smoothie with oats";
+  } else if (time === "morning" && diet === "vegetarian") {
+    return "Vegetarian scrambled eggs with toast";
+  } else if (time === "morning" && diet === "omnivore") {
+    return "Bacon and eggs with toast";
+  } else if (time === "afternoon" && diet === "vegan") {
+    return "Vegan burrito";
+  } else if (time === "afternoon" && diet === "vegetarian") {
+    return "Vegetarian pizza";
+  } else if (time === "afternoon" && diet === "omnivore") {
+    return "Chicken sandwich";
+  } else if (time === "evening" && diet === "vegan") {
+    return "Vegan lentil stew";
+  } else {
+    return "No suggestion available for this combination";
+  }
+}
 // Usage examples:
-// console.log(suggestMeal("morning", "vegan")); // "Fruit smoothie with oats"
-// console.log(suggestMeal("morning", "vegetarian")); // "Vegetarian scrambled eggs with toast"
-// console.log(suggestMeal("morning", "omnivore")); // "Bacon and eggs with toast"
-// console.log(suggestMeal("afternoon", "vegan")); // "Vegan burrito"
-// console.log(suggestMeal("afternoon", "vegetarian")); // "Vegetarian pizza"
-// console.log(suggestMeal("afternoon", "omnivore")); // "Chicken sandwich"
-// console.log(suggestMeal("evening", "vegan")); // "Vegan lentil stew"
+console.log(suggestMeal("morning", "vegan")); // "Fruit smoothie with oats"
+console.log(suggestMeal("morning", "vegetarian")); // "Vegetarian scrambled eggs with toast"
+console.log(suggestMeal("morning", "omnivore")); // "Bacon and eggs with toast"
+console.log(suggestMeal("afternoon", "vegan")); // "Vegan burrito"
+console.log(suggestMeal("afternoon", "vegetarian")); // "Vegetarian pizza"
+console.log(suggestMeal("afternoon", "omnivore")); // "Chicken sandwich"
+console.log(suggestMeal("evening", "vegan")); // "Vegan lentil stew"
+console.log(suggestMeal("morning", "fasfood"));
