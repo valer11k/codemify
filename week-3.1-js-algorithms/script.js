@@ -1,6 +1,7 @@
 // Challenge 1: Simple check
 // Write a function called checkGreaterTen that takes a number as an argument and checks whether it's greater than 10.
 // If the number is greater than 10, return the string "Greater than 10". If not, return the string "Not greater than 10".
+
 function checkGreaterTen(number) {
   if (number > 10) {
     return "Greater than 10";
@@ -16,6 +17,7 @@ console.log(checkGreaterTen(10)); // "Not greater than 10"
 // Write a function called assignGrade that takes a number score and assigns a letter grade based on the score.
 // The function should return "A" for scores 90 and above, "B" for scores 80 - 89, "C" for scores 70 - 79,
 // "D" for scores 60 - 69 and "F" for scores below 60.
+
 function assignGrade(number) {
   if (number >= 90) {
     return "A";
@@ -74,11 +76,22 @@ console.log(checkEligibility(22)); // "Can vote, drive, and drink"
 // Write a function called isLeapYear that checks whether a year is a leap year. If the year is evenly divisible by 4,
 // it is a leap year, unless it is evenly divisible by 100. However, if it is divisible by 400, then it is.
 //function isLeapYear (year)
+function isLeapYear(year) {
+  if (year % 400 === 0) {
+    return "Leap year";
+  } else if (year % 100 === 0) {
+    return "Not a leap year";
+  } else if (year % 4 === 0) {
+    return "Leap year";
+  } else {
+    return "Not a leap year";
+  }
+}
 // Usage examples:
-// console.log(isLeapYear(2000)); // "Leap year"
-// console.log(isLeapYear(1800)); // "Not a leap year"
-// console.log(isLeapYear(2004)); // "Leap year"
-// console.log(isLeapYear(2021)); // "Not a leap year"
+console.log(isLeapYear(2000)); // "Leap year"
+console.log(isLeapYear(1800)); // "Not a leap year"
+console.log(isLeapYear(2004)); // "Leap year"
+console.log(isLeapYear(2021)); // "Not a leap year"
 
 // Challenge 6: Season Checker
 // Write a function called checkSeason that takes a month as an argument (from 1-12 where 1 is January and 12 is December)
@@ -129,6 +142,7 @@ console.log(fizzBuzzSimplified(2)); // 2
 // Write a function called checkTemp that takes a temperature in Fahrenheit as an argument.
 // If the temperature is below 32, return "Freezing". If it's 32 - 50, return "Cold".
 // If it's 51 - 70, return "Mild". If it's 71 - 90, return "Warm". If it's above 90, return "Hot".
+
 function checkTemp(temperature) {
   if (temperature < 32) {
     return "Freezing";
@@ -152,6 +166,7 @@ console.log(checkTemp(95)); // "Hot"
 // Challenge 9: Traffic Sign
 // Write a function called checkSign that accepts the color of a traffic sign ("red", "yellow", "green") as an argument.
 // The function should return "Stop" if the sign is red, "Caution" if the sign is yellow, and "Go" if the sign is green.
+
 function checkSign(color) {
   if (color === "red") {
     return "Stop";
@@ -170,6 +185,7 @@ console.log(checkSign("green")); // "Go"
 // Write a function suggestMeal(time, diet) that takes a time of the day ("morning", "afternoon", "evening")
 // and a type of diet ("vegan", "vegetarian", "omnivore") as input. The function should return meal suggestions
 // based on the input parameters.
+
 function suggestMeal(time, diet) {
   if (time === "morning" && diet === "vegan") {
     return "Fruit smoothie with oats";
