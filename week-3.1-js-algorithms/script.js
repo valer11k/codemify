@@ -213,4 +213,4 @@ console.log(suggestMeal("afternoon", "vegan")); // "Vegan burrito"
 console.log(suggestMeal("afternoon", "vegetarian")); // "Vegetarian pizza"
 console.log(suggestMeal("afternoon", "omnivore")); // "Chicken sandwich"
 console.log(suggestMeal("evening", "vegan")); // "Vegan lentil stew"
-console.log(suggestMeal("morning", "fasfood"));
+console.log(suggestMeal("morning", "coffee"));
