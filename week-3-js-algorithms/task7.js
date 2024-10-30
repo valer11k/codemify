@@ -1,15 +1,16 @@
 // Create the function. It should accept two string parameters and return the longer one
-function longerString (parameterFirst, parameterSecond) {
-    if (parameterFirst.length > parameterSecond.length){
-        return parameterFirst
+function longerString(str1, str2){
+    const stringOne = str1.length;
+    const stringTwo = str2.length;
+    if (stringOne > stringTwo) {
+        return str1
     } else {
-        return parameterSecond
+        return str2
     }
-};
+}
 
-const result = longerString('Hello', 'Worlds');
-console.log(result);
 
 console.log(longerString('codemify', 'test')) // codemify
 console.log(longerString('automation', 'coding')) // automation
 console.log(longerString('automation', 'the codemify')) // the codemify
+

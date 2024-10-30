@@ -1,12 +1,10 @@
 // Equality Check. Create a function that returns true or false that matches the examples below
-function checkEquality (a,b){
-if (typeof a === 'number' &&  typeof b === 'boolean') {
+function checkEquality (a,b) {
+  if (a === b){
+    return true 
+  } else {
     return false
-  } else if (typeof a === 'number' &&  typeof b === 'string') {
-    return false
-  } else if (typeof a === 'number' &&  typeof b === 'number') {
-    return true
-}
+  }
 }
 
 console.log(checkEquality(1, true)) // ➞ false. A number and a boolean: the value and type are different
