@@ -1,5 +1,6 @@
 // Challenge 2: Find the Largest Number
 // Write a function to find the largest number in the array.
+
 function findLargestNumber(array) {
   let largestNumber = array[0];
   for (let index = 0; index < array.length; index++) {
