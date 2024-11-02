@@ -4,7 +4,7 @@
 function findLongestString(array) {
   let string = array[0];
 
-  for (let i = 0; i < array.length; i++) {
+  for (i = 0; i < array.length; i++) {
     if (array[i].length > string.length) {
       string = array[i];
     }

@@ -1,18 +1,16 @@
 // Challenge 4: Find Numbers Greater than Ten
 // Write a function to find all numbers that are larger than 10 in the array.
 
-function findNumbersGreaterThanTen (array){
-    
-    let numbersGreaterThanTen = [];
+function findNumbersGreaterThanTen(array) {
+  let number = [];
 
-    for (i = 0; i < array.length; i++) {
-        if (array[i] > 10){
-            numbersGreaterThanTen.push(array[i])
-        }
-    } return numbersGreaterThanTen;
+  for (i = 0; i < array.length; i++) {
+    if (array[i] > 10) {
+      number.push(array[i]);
+    }
+  }
+  return number;
 }
-
-
 
 // Usage examples:
 console.log(findNumbersGreaterThanTen([5, 10, 15, 20])); // [15, 20]

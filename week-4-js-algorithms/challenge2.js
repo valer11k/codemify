@@ -2,14 +2,14 @@
 // Write a function to find the largest number in the array.
 
 function findLargestNumber(array) {
-  bigNumber = array[0];
+  let number = array[0];
 
-  for (i = 0; i < array.length; i++) {
-    if (array[i] > bigNumber) {
-      bigNumber = array[i];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > number) {
+      number = array[i];
     }
   }
-  return bigNumber;
+  return number;
 }
 
 // Usage examples:
