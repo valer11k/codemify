@@ -3,23 +3,44 @@
 // and a type of diet ("vegan", "vegetarian", "omnivore") as input. The function should return meal suggestions
 // based on the input parameters.
 function suggestMeal(time, diet) {
-    switch (time) {
-      case "morning":
-        if (diet === "vegan") return "Fruit smoothie with oats";
-        if (diet === "vegetarian") return "Vegetarian scrambled eggs with toast";
-        if (diet === "omnivore") return "Bacon and eggs with toast";
-        break;
-      case "afternoon":
-        if (diet === "vegan") return "Vegan burrito";
-        if (diet === "vegetarian") return "Vegetarian pizza";
-        if (diet === "omnivore") return "Chicken sandwich";
-        break;
-      case "evening":
-        if (diet === "vegan") return "Vegan lentil stew";
-        break;
-    }
-    return "No suggestion available for this combination";
+  switch (time) {
+    case "morning":
+      switch (diet) {
+        case "vegan":
+          return "Fruit smoothie with oats";
+        case "vegetarian":
+          return "Vegetarian scrambled eggs with toast";
+        case "omnivore":
+          return "Bacon and eggs with toast";
+        default:
+          return "No suggestion available for this diet";
+      }
+    case "afternoon":
+      switch (diet) {
+        case "vegan":
+          return "Vegan burrito";
+        case "vegetarian":
+          return "Vegetarian pizza";
+        case "omnivore":
+          return "Chicken sandwich";
+        default:
+          return "No suggestion available for this diet";
+      }
+    case "evening":
+      switch (diet) {
+        case "vegan":
+          return "Vegan lentil stew";
+        case "vegetarian":
+          return "Vegetarian stir-fry";
+        case "omnivore":
+          return "Grilled salmon with vegetables";
+        default:
+          return "No suggestion available for this diet";
+      }
+    default:
+      return "No suggestion available for this time";
   }
+}
 
   // Usage examples:
 console.log(suggestMeal("morning", "vegan")); // "Fruit smoothie with oats"
