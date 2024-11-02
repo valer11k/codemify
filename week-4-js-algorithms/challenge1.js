@@ -2,13 +2,13 @@
 // Write a function to find the longest string in the array.
 
 function findLongestString(array) {
-  let longest = "";
+  longestString = "";
   for (let index = 0; index < array.length; index++) {
-      if (array[index].length > longest.length) {
-          longest = array[index];
-      }
+    if (array[index].length > longestString.length) {
+      longestString = array[index];
+    }
   }
-  return longest;
+  return longestString;
 }
 
 // Usage examples:
