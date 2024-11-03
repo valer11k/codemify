@@ -2,3 +2,18 @@
 // instead of the number and for the multiples of five print "Buzz". For numbers which are multiples
 // of both three and five print "FizzBuzz".
 // No need for permutations as there are no arguments to this function. Check the printed output.
+
+function program() {
+  for (i = 1; i < 101; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("FizzBuzz");
+    } else if (i % 5 === 0) {
+      console.log("Buzz");
+    } else if (i % 3 === 0) {
+      console.log("Fizz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+program();

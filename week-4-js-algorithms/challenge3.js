@@ -4,7 +4,7 @@
 function findDollarStrings(array) {
   let dollar = [];
 
-  for (let i = 0; i < array.length; i++) {
+  for (i = 0; i < array.length; i++) {
     if (array[i].includes("$")) {
       dollar.push(array[i]);
     }

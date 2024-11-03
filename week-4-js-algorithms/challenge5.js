@@ -2,12 +2,13 @@
 // Write a function to find the sum of all numbers in the array.
 
 function sumNumbers(array) {
-    let sum = 0
-    for (i = 0; i < array.length; i ++){
-        sum = sum + array[i]
-    } return sum;
-}  
+  let sum = array[0];
 
+  for (i = 1; i < array.length; i++) {
+    sum = sum + array[i];
+  }
+  return sum;
+}
 
 // Usage examples:
 console.log(sumNumbers([1, 2, 3, 4, 5])); // 15
