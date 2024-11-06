@@ -1,27 +1,37 @@
 class Helpers {
-    getUsersByAge(response, ageMin, ageMax) {
-        const users = [];
+  getUsersByAge(response, ageMin, ageMax) {
+    const users = response.users
+      .filter((user) => user.age >= ageMin && user.age <= ageMax)
+      .map((users) => users.name);
 
-        // Your code here
+    return users;
+  }
 
-        return users;
-    }
+  getUsersByRole(response, role) {
+    const users = response.users
+      .filter((user) => user.role === "admin")
+      .map((users) => users.name);
 
-    getUsersByRole(response, role) {
-        const users = [];
+    return users;
+  }
 
-        // Your code here
+  getUsersByCountry(response, country) {
+    const users = response.users
+      .filter((user) => user.country === "USA")
+      .map((users) => users.name);
 
-        return users;
-    }
+    return users;
+  }
 
-    getUsersByCountry(response, country) {
-        const users = [];
+  getUsersByBalance(response, minBalance, maxBalance) {
+    const users = response.users
+      .filter(
+        (user) => user.balance >= minBalance && user.balance <= maxBalance
+      )
+      .map((users) => users.name);
 
-        // Your code here
-
-        return users;
-    }
+    return users;
+  }
 }
 
-export default new Helpers()
+export default new Helpers();
