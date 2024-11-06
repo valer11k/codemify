@@ -122,6 +122,9 @@ for (let i = 0; i < 3; i++) {
 // arrBeans.push('pinto');
 // console.log(arrBeans);
 
+/* What is a callback in JavaScript?
+A callback is a function passed as an argument of another function.
+
 
 
 
