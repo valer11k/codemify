@@ -1,7 +1,7 @@
 class Helpers {
   getUsersByAge(response, ageMin, ageMax) {
     const users = response.users
-      .filter((user) => user.age >= 30 && user.age <= 40)
+      .filter((user) => user.age >= ageMin && user.age <= ageMax)
       .map((user) => user.name);
     return users;
   }
@@ -10,7 +10,6 @@ class Helpers {
     const users = response.users
       .filter((user) => user.role === "admin")
       .map((user) => user.name);
-
     return users;
   }
 
@@ -24,7 +23,7 @@ class Helpers {
 
   getUsersByBalance(response, minBalance, maxBalance) {
     const users = response.users
-      .filter((user) => user.balance >= 1100 && user.balance <= 2000)
+      .filter((user) => user.balance >= minBalance && user.balance <= maxBalance)
       .map((user) => user.name);
 
     return users;
@@ -32,3 +31,6 @@ class Helpers {
 }
 
 export default new Helpers();
+
+
+
