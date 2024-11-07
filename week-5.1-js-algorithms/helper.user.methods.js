@@ -44,14 +44,13 @@ class Helpers {
 
   getUserBalanceByCurrency(response, currency) {
     const balances = [];
-    
+
     for (let i = 0; i < response.users.length; i++) {
       const user = response.users[i];
-      if (user.currency === currency){
-        balances.push(user.balance)
+      if (user.currency === currency) {
+        balances.push(user.balance);
       }
     }
-    // Your code here
 
     return balances;
   }
