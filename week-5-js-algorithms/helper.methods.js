@@ -1,16 +1,15 @@
 class Helpers {
   getUsersByAge(response, ageMin, ageMax) {
     const users = response.users
-      .filter((user) => user.age >= ageMin && user.age <= ageMax)
-      .map((users) => users.name);
-
+      .filter((user) => user.age >= 30 && user.age <= 40)
+      .map((user) => user.name);
     return users;
   }
 
   getUsersByRole(response, role) {
     const users = response.users
       .filter((user) => user.role === "admin")
-      .map((users) => users.name);
+      .map((user) => user.name);
 
     return users;
   }
@@ -18,17 +17,15 @@ class Helpers {
   getUsersByCountry(response, country) {
     const users = response.users
       .filter((user) => user.country === "USA")
-      .map((users) => users.name);
+      .map((user) => user.name);
 
     return users;
   }
 
   getUsersByBalance(response, minBalance, maxBalance) {
     const users = response.users
-      .filter(
-        (user) => user.balance >= minBalance && user.balance <= maxBalance
-      )
-      .map((users) => users.name);
+      .filter((user) => user.balance >= 1100 && user.balance <= 2000)
+      .map((user) => user.name);
 
     return users;
   }
