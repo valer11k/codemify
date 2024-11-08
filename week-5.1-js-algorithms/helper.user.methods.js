@@ -1,57 +1,33 @@
 class Helpers {
   getUsersByStatus(response, status) {
-    const users = [];
-
-    for (let i = 0; i < response.users.length; i++) {
-      const user = response.users[i];
-      if (
-        user.role.status === status &&
-        user.role.description != "" &&
-        user.role.description != null
-      ) {
-        users.push(user.name);
-      }
-    }
+    const users = response.users
+      .filter(
+        (user) =>
+          user.role.status === status &&
+          user.role.description !== null &&
+          user.role.description !== ""
+      )
+      .map((user) => user.name);
     return users;
   }
 
   getUsersByRole(response, role, roleId) {
-    const users = [];
-
-    for (let i = 0; i < response.users.length; i++) {
-      const user = response.users[i];
-
-      if (user.role.name === role && user.role.id === roleId) {
-        users.push(user.name);
-      }
-    }
+    const users = response.users
+      .filter((user) => user.role.name === "Admin" && user.role.id === roleId)
+      .map((user) => user.name);
 
     return users;
   }
 
   getUsersByEmailDomain(response, domain) {
-    const users = [];
-    for (let i = 0; i < response.users.length; i++) {
-      const user = response.users[i];
-
-      if (user.email.includes(domain)) {
-        users.push(user.name);
-      }
-    }
-
+    const users = response.users
+      .filter((user) => user.email.includes(domain))
+      .map((user) => user.name);
     return users;
   }
 
   getUserBalanceByCurrency(response, currency) {
-    const balances = [];
-
-    for (let i = 0; i < response.users.length; i++) {
-      const user = response.users[i];
-      if (user.currency === currency) {
-        balances.push(user.balance);
-      }
-    }
-
+    const balances = response.users.filter((user) => user.currency === currency).map((user) => user.balance)
     return balances;
   }
 }
