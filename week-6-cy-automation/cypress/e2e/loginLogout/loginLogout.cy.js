@@ -13,5 +13,12 @@ describe("Login", () => {
     cy.get("a p").should("have.text", "role: user");
     cy.title().should("eq", "User: Profile | Delek Homes");
     cy.url().should("include", "/dashboard/user/profile");
+
+    //Click user icon and logout button
+    cy.get('button [data-testid="PersonIcon"]').click();
+    cy.contains("Logout").click();
+
+    cy.url().should("include", "/auth/login");
+    cy.get("#root h4").should("contain.text", "Sign in to Delek Homes");
   });
 });
