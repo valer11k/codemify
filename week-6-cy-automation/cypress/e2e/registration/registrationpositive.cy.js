@@ -8,6 +8,24 @@ describe("Registration", () => {
     cy.visit("/");
   });
 
+  it("Should not register without filling in required fields", () => {
+    cy.get('[href="/auth/register"]').click();
+    cy.get('[type="submit"]').click();
+
+    cy.get(".MuiFormHelperText-root.Mui-error")
+      .eq(0)
+      .should("have.text", "First name required");
+    cy.get(".MuiFormHelperText-root.Mui-error")
+      .eq(1)
+      .should("have.text", "Last name required");
+    cy.get(".MuiFormHelperText-root.Mui-error")
+      .eq(2)
+      .should("have.text", "Email is required");
+    cy.get(".MuiFormHelperText-root.Mui-error")
+      .eq(3)
+      .should("have.text", "Password is required");
+  });
+
   it("Should register a new user account", () => {
     cy.get('[href="/auth/register"]').click();
     cy.get('[name="firstName"]').type("Valeriia");
@@ -21,7 +39,6 @@ describe("Registration", () => {
     cy.title().should("eq", "User: Profile | Delek Homes");
     cy.url().should("include", "/dashboard/user/profile");
 
-    //Click user icon and logout button
     cy.get('button [data-testid="PersonIcon"]').click();
     cy.contains("Logout").click();
 
@@ -31,5 +48,19 @@ describe("Registration", () => {
 
     cy.get("a h6").should("have.text", "Valeriia  Test");
     cy.get("a p").should("have.text", "role: user");
+  });
+
+  it("Should not register with an already existing email account", () => {
+    cy.get('[href="/auth/register"]').click();
+    cy.get('[name="firstName"]').type("Valeriia");
+    cy.get('[name="lastName"]').type("Test");
+    cy.get('[name="email"]').type(email);
+    cy.get('[name="password"]').type(password);
+    cy.get('[type="submit"]').click();
+
+    cy.get('[role="alert"]').should(
+      "have.text",
+      "Input data validation failed"
+    );
   });
 });
