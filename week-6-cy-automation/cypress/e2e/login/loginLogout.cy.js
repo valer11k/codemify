@@ -14,7 +14,6 @@ describe("Login", () => {
     cy.title().should("eq", "User: Profile | Delek Homes");
     cy.url().should("include", "/dashboard/user/profile");
 
-    //Click user icon and logout button
     cy.get('button [data-testid="PersonIcon"]').click();
     cy.contains("Logout").click();
 
