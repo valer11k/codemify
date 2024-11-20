@@ -19,6 +19,6 @@ describe("Login", () => {
     cy.contains("Logout").click();
 
     cy.url().should("include", "/auth/login");
-    cy.get("#root h4").should("contain.text", "Sign in to Delek Homes");
+    cy.contains("Sign in to Delek Homes").should("be.visible");
   });
 });
