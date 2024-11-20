@@ -26,7 +26,6 @@ describe("Registration", () => {
     cy.get('[name="password"]').type(password);
     cy.get('[type="submit"]').click();
 
-    // Check successful registration
     cy.get("a p").should("have.text", "role: user");
     cy.get("a h6").should("have.text", "Valeriia  Test");
     cy.title().should("eq", "User: Profile | Delek Homes");

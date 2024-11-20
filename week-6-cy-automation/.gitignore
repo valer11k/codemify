@@ -1,3 +1,4 @@
 .DS_Store
 node_modules
-2-advanced-examples
+week-6-cy-automation/cypress/e2e/1-getting-started/
+week-6-cy-automation/cypress/e2e/2-advanced-examples
