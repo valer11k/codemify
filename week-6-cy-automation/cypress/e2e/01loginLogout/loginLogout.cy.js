@@ -1,9 +1,7 @@
-describe("Login and Logout", () => {
-  beforeEach(() => {
+describe("Login and Logout", () => { 
+  it("Should login and logout", () => { 
     cy.visit("/");
-  });
 
-  it("Should login and logout", () => {
     cy.get('[href="/auth/login"]').click();
     cy.get('[name="email"]').type("valeriiatest@gmail.com");
     cy.get('[name="password"]').type("123456");
@@ -20,4 +18,4 @@ describe("Login and Logout", () => {
     cy.url().should("include", "/auth/login");
     cy.contains("Sign in to Delek Homes").should("be.visible");
   });
-});
+}); 
