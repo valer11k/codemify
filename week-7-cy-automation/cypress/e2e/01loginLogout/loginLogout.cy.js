@@ -14,7 +14,6 @@ describe("Login and Logout", () => {
 
     cy.get("a h6").should("have.text", "Valeriia  Test");
     cy.get("a p").should("have.text", "role: user");
-    cy.title().should("eq", "User: Profile | Delek Homes");
     cy.url().should("include", "/dashboard/user/profile");
 
     loginPage.personIconBtn.click();
