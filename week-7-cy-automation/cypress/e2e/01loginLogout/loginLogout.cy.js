@@ -1,12 +1,10 @@
 import loginPage from "../../page_objects/login.page";
 import credentials from "../../page_objects/credentials.json";
 
-describe("Login and Logout", () => {
-  beforeEach(() => {
+describe("Login and Logout", () => { 
+  it("Should login and logout", () => { 
     cy.visit("/");
-  });
 
-  it("Should login and logout", () => {
     loginPage.loginLink.click();
     loginPage.emailInput.type(credentials.email);
     loginPage.passwordInput.type(credentials.password);
@@ -22,5 +20,6 @@ describe("Login and Logout", () => {
     cy.url().should("include", "/auth/login");
     cy.contains("Sign in to Delek Homes").should("be.visible");
   });
-});
+}); 
+
 
