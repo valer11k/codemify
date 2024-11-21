@@ -1,5 +1,3 @@
 .DS_Store
 node_modules
-
-# Ignore 2-advanced-examples folder only
 week-7-cy-automation/cypress/e2e/2-advanced-examples/
