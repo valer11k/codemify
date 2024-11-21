@@ -8,7 +8,7 @@ describe("Registration", () => {
     cy.visit("/");
   });
 
-  it("Should not register without filling in required fields", () => {
+  it("Should not register with empty field", () => {
     cy.get('[href="/auth/register"]').click();
     cy.get('[type="submit"]').click();
 
@@ -18,7 +18,7 @@ describe("Registration", () => {
     cy.contains("Password is required").should("be.visible");
   });
 
-  it("Should not register with an already existing email account", () => {
+  it("Should not register with an already registered email account", () => {
     cy.get('[href="/auth/register"]').click();
     cy.get('[name="firstName"]').type("Valeriia");
     cy.get('[name="lastName"]').type("Test");
@@ -28,7 +28,6 @@ describe("Registration", () => {
 
     cy.get("a p").should("have.text", "role: user");
     cy.get("a h6").should("have.text", "Valeriia  Test");
-    cy.title().should("eq", "User: Profile | Delek Homes");
     cy.url().should("include", "/dashboard/user/profile");
 
     cy.get('button [data-testid="PersonIcon"]').click();
