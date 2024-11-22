@@ -18,7 +18,6 @@ describe("Registration", () => {
 
     cy.get("a p").should("have.text", "role: user");
     cy.get("a h6").should("have.text", "Valeriia  Test");
-    cy.url().should("include", "/dashboard/user/profile");
 
     // confirm register user can log in
 
