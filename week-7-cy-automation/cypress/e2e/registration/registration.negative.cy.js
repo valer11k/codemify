@@ -2,6 +2,7 @@ import { faker } from "@faker-js/faker";
 import dashboardPage from "../../page_objects/dashboard.page";
 import homePage from "../../page_objects/home.page";
 import registrationPage from "../../page_objects/registration.page";
+import loginPage from "../../page_objects/login.page";
 
 const email = faker.internet.email();
 const password = faker.internet.password();
@@ -15,28 +16,28 @@ describe("Registration", () => {
   it("Should not register with empty field", () => {
     registrationPage.registerBtn.click();
 
-    registrationPage.firstNameError.should("be.visible");
-    registrationPage.lastNameError.should("be.visible");
-    registrationPage.emailError.should("be.visible");
-    registrationPage.passwordError.should("be.visible");
+    registrationPage.firstNameInputError.should("be.visible");
+    registrationPage.lastNameInputError.should("be.visible");
+    registrationPage.emailInputError.should("be.visible");
+    registrationPage.passwordInputError.should("be.visible");
   });
 
   it("Should not register with an already registered email account", () => {
-    registrationPage.fullName("Valeriia", "Test")
-    registrationPage.credentials(email,password);
+    registrationPage.setFullName("Valeriia", "Test")
+    registrationPage.setCredentials(email,password);
     registrationPage.registerBtn.click();
 
-    dashboardPage.fullName.should("have.text", "Valeriia  Test");
+    dashboardPage.fullNameInput.should("have.text", "Valeriia  Test");
     dashboardPage.roleType.should("have.text", "role: user");
 
     dashboardPage.personIcon.click();
-    dashboardPage.logoutBtn.click();
+    cy.contains("Logout").click();
 
     cy.visit("/");
-    registrationPage.registerBtn.click();
+    homePage.registerBtn.click();
 
-    registrationPage.fullName("Valeriia", "Test")
-    registrationPage.credentials(email,password);
+    registrationPage.setFullName("Valeriia", "Test")
+    registrationPage.setCredentials(email,password);
     registrationPage.registerBtn.click();
    
     registrationPage.errorMessage.should("have.text", "Input data validation failed");

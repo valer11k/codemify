@@ -7,13 +7,13 @@ describe("Login", () => {
       cy.visit("/");
   
       homePage.loginBtn.click();
-      loginPage.login("valeriiaTest@gmail.com", "123456");
+      loginPage.login("valeriiatest1@gmail.com", "123456");
   
-      dashboardPage.fullName.should("have.text", "Valeriia  Test");
+      dashboardPage.fullNameInput.should("have.text", "Valeriia  Test");
       dashboardPage.roleType.should("have.text", "role: user");
         
       dashboardPage.personIcon.click();
-      dashboardPage.logoutBtn.click();
+      cy.contains("Logout").click();
 
       loginPage.signInText.should("be.visible");
     });
