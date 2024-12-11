@@ -13,10 +13,10 @@ describe("Registration", () => {
   });
 
   it("Should register a new user account", () => {
-    homePage.registerBtn.click();
+    homePage.registerButton.click();
     registrationPage.setFullName("Valeriia", "Test")
     registrationPage.setCredentials(email, password)
-    registrationPage.registerBtn.click();
+    registrationPage.registerButton.click();
     
     dashboardPage.fullNameInput.should("have.text", "Valeriia  Test");
     dashboardPage.roleType.should("have.text", "role: user");
@@ -26,9 +26,10 @@ describe("Registration", () => {
     dashboardPage.personIcon.click();
     cy.contains("Logout").click();
     
-    loginPage.login(email,password);
+    loginPage.login(email, password);
     
     dashboardPage.fullNameInput.should("have.text", "Valeriia  Test");
     dashboardPage.roleType.should("have.text", "role: user");
   });
+  
 });

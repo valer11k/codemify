@@ -1,9 +1,8 @@
 class FeaturedListingsPage {
-  get searchFieldInput() {
-    return cy.contains(".MuiFormControl-root label", "Search").parent().find("input"); }
+  get searchFieldInput() { return cy.contains(".MuiFormControl-root label", "Search").parent().find("input"); }
   get cityFieldInput() { return cy.contains(".MuiFormControl-root label", "City").parent().find("input"); }
-  get startSearchBtn() { return cy.contains("Start Search"); }
-  get moreInfoBtn() { return cy.get(".MuiBox-root.css-xi606m"); }
+  get startSearchButton() { return cy.contains("Start Search"); }
+  get moreInfoButton() { return cy.get(".MuiBox-root.css-xi606m"); }
   get listingTitle() { return cy.get(".MuiGrid-root h5"); }
   get listingCityName() { return cy.get(".MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-6"); }
   get bedroomsDropdown() { return cy.contains(".MuiFormControl-root label", "Bedrooms").parent().find('[aria-haspopup="listbox"]'); }
