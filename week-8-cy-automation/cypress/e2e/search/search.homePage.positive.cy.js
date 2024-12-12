@@ -12,20 +12,20 @@ describe("Search", () => {
 
   it("Should search by keyword", () => {
     homePage.searchFieldInput.type("Modern House Mill Valley");
-    homePage.startSearchBtn.click();
+    homePage.startSearchButton.click();
     featuredListingsPage.listingTitle.should("have.text", "Modern House Mill Valley");
   });
 
   it("Should search by bedrooms", () => {
     homePage.setNumbersOfBedrooms();
-    homePage.startSearchBtn.click();
-    featuredListingsPage.moreInfoBtn.eq(Math.floor(Math.random() * 5)).click();
+    homePage.startSearchButton.click();
+    featuredListingsPage.moreInfoButton.eq(Math.floor(Math.random() * 5)).click();
     featuredListingsPage.getNumberOfBedrooms.should("be.at.least", 2);
   });
 
   it("Should search by city", () => {
     homePage.cityFieldInput.type("Mill Valley");
-    homePage.startSearchBtn.click();
+    homePage.startSearchButton.click();
     featuredListingsPage.listingTitle.should("have.text", "Modern House Mill Valley");
     featuredListingsPage.listingCityName.eq(4).should("have.text", " City: Mill Valley");
     featuredListingsPage.oneListingOnPage.should("have.length", 1);
