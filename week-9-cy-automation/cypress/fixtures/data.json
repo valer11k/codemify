@@ -1,0 +1,12 @@
+{
+  "credentials": {
+    "email": "valeriiatest1@gmail.com",
+    "password": "123456",
+    "firstName": "Valeriia",
+    "lastName": "Test"
+  },
+  "listing": {
+    "title": "Modern House Mill Valley",
+    "city": "Mill Valley"
+  }
+}
