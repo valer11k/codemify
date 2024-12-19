@@ -9,7 +9,12 @@ class CommonPage {
 
     setNumbersOfBedrooms() {
       this.bedroomsDropdown.click();
-      this.selectNumberOfBedrooms.contains("2+").click();
+      if (this.selectNumberOfBedrooms.contains("2+")){
+        this.selectNumberOfBedrooms.contains("2+").click();
+      } else if (this.selectNumberOfBedrooms.contains("1+")()) {
+          this.selectNumberOfBedrooms.contains("1+").click
+      }
+    
     }
 
     getListingPrice() {
@@ -20,5 +25,4 @@ class CommonPage {
       });
     }
   }
-  
   export {CommonPage};

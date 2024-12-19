@@ -3,6 +3,7 @@ import dashboardPage from "../../page_objects/dashboard.page";
 import homePage from "../../page_objects/home.page";
 import registrationPage from "../../page_objects/registration.page";
 import loginPage from "../../page_objects/login.page";
+import verificationErrorMessages from "../../fixtures/verificationErrorMessages.json";
 
 const userData = {
   firstName: faker.person.firstName(),
@@ -26,7 +27,7 @@ describe("Registration", () => {
     dashboardPage.fullNameInput.should("include.text", userData.firstName);
     dashboardPage.fullNameInput.should("include.text", userData.lastName);
 
-    dashboardPage.roleType.should("include.text", "role: user");
+    dashboardPage.roleType.should("include.text", verificationErrorMessages.dashboard.role);
 
     dashboardPage.personIcon.click();
     cy.contains("Logout").click();
@@ -36,7 +37,7 @@ describe("Registration", () => {
     dashboardPage.fullNameInput.should("include.text", userData.firstName);
     dashboardPage.fullNameInput.should("include.text", userData.lastName);
 
-    dashboardPage.roleType.should("include.text", "role: user");
+    dashboardPage.roleType.should("include.text", verificationErrorMessages.dashboard.role);
   });
 
 });

@@ -8,19 +8,19 @@ class RegistrationPage {
   get fieldsErrorMessages() { return cy.get("p.MuiFormHelperText-root") };
   
   registerUser(firstName, lastName, email,password) {
-    if(firstName) {this.firstNameInput.type(firstName)}
-    if(lastName) {this.lastNameInput.type(lastName)}
-    if(email) {this.emailInput.type(email)}
-    if(password) {this.passwordInput.type(password)}
+    this.firstNameInput.type(firstName)
+    this.lastNameInput.type(lastName)
+    this.emailInput.type(email)
+    this.passwordInput.type(password)
     this.registerButton.click();
   }
 
   registerExistingUser() {
-    cy.fixture('data.json').then((data) => {
-      this.firstNameInput.type(data.credentials.firstName)
-      this.lastNameInput.type(data.credentials.lastName)
-      this.emailInput.type(data.credentials.email)
-      this.passwordInput.type(data.credentials.password)
+    cy.fixture('userCredentials.json').then((userCredentials) => {
+      this.firstNameInput.type(userCredentials.firstName)
+      this.lastNameInput.type(userCredentials.lastName)
+      this.emailInput.type(userCredentials.email)
+      this.passwordInput.type(userCredentials.password)
       this.registerButton.click();
     });
     

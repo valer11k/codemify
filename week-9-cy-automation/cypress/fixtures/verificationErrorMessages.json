@@ -14,19 +14,5 @@
   },
   "login": {
     "signInText": "Sign in to Delek Homes"
-  },
-  "listing": {
-    "title": "Modern House Mill Valley",
-    "city": " City: Mill Valley"
-  },
-  "listingDetails": [
-    "Asking Price: $ 700,000",
-    "Square Feet: 1234",
-    "Lot Size: 5600",
-    "Listing Date: 04 December 2024",
-    "Garage: 1",
-    "Bedrooms: 2",
-    "Bathrooms: 2",
-    "Realtor: Realtor Realtor"
-  ]
+  } 
 }
