@@ -1,0 +1,24 @@
+{
+    "title": "Modern House Sausalito",
+    "city": "Sausalito",
+    "description": "This is it, YOUR NEW HOME!",
+    "address": "329 Richardson Way",
+    "zipCode": "94941",
+    "state": "CA",
+    "price": "700000",
+    "bedrooms": "2",
+    "bathrooms": "2",
+    "garage": "1",
+    "sqft": "1234",
+    "lotSize": "5600",
+    "listingInfo": [
+    "Asking Price: $ 700,000",
+    "Square Feet: 1234",
+    "Lot Size: 5600",
+    "Listing Date: 21 December 2024",
+    "Garage: 1",
+    "Bedrooms: 2",
+    "Bathrooms: 2",
+    "Realtor: Valeriia Admin"
+  ]
+}
