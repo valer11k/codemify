@@ -1,6 +1,7 @@
 import featuredListingsPage from "../../page_objects/featured.listings.page";
 import homePage from "../../page_objects/home.page";
 import listingDetails from "../../fixtures/listingDetails.json"
+import userCredentials from "../../fixtures/userCredentials.json";
 
 let listingId; 
 
