@@ -1,5 +1,5 @@
 import userCredentials from "../../fixtures/userCredentials.json";
-import createNewRealEstatePage from "../../page_objects/createNewRealEstate.page";
+import createNewRealEstatePage from "../../page_objects/create.new.real.estate.page";
 import listingDetails from "../../fixtures/listingDetails.json"
 import homePage from "../../page_objects/home.page";
 import featuredListingsPage from "../../page_objects/featured.listings.page";
@@ -7,6 +7,12 @@ import featuredListingsPage from "../../page_objects/featured.listings.page";
 let listingId
 
 describe("Create a new listing", () => {
+  afterEach(() => {
+    cy.url().then((url) => {
+      const listingId = url.split("/").pop(); 
+      cy.deleteListing(listingId); 
+    });
+  });
 
   it("Verify Admin can create a new listing", () => {
     cy.loginApi(userCredentials.email, userCredentials.password);
@@ -19,7 +25,7 @@ describe("Create a new listing", () => {
     createNewRealEstatePage.listingZipCodeField.type(listingDetails.zipCode);
     createNewRealEstatePage.listingStateField.type(listingDetails.state);
     createNewRealEstatePage.selectState.click();
-    createNewRealEstatePage.listingAddImage.attachFile("/house.jpg", { subjectType: 'drag-n-drop' });
+    createNewRealEstatePage.listingAddImage.attachFile("images/house.jpg", { subjectType: 'drag-n-drop' });
     createNewRealEstatePage.listingsetPublishToggle.click();
     createNewRealEstatePage.listingPriceField.type(listingDetails.price);
     createNewRealEstatePage.listingBedroomsField.type(listingDetails.bedrooms);
@@ -38,12 +44,6 @@ describe("Create a new listing", () => {
   
     listingDetails.listingInfo.forEach((text) => {
     featuredListingsPage.listingInfo.contains(text).should("be.visible");});
-
-    cy.then(() => {
-      expect(listingId).to.not.be.undefined;
-      cy.deleteListing(listingId).then((response) => {
-      });
-    });
   });
 
 });

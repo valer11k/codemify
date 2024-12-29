@@ -12,8 +12,8 @@ Cypress.Commands.add("loginApi", (email, password) => {
 });
 
 Cypress.Commands.add("createListing", (listingDetails) => {
-  cy.fixture("house.jpg").then((image) => {
-    const blob = Cypress.Blob.base64StringToBlob(image, "image/jpg");
+  cy.fixture("images/house.jpg").then((image) => {
+    const blob = Cypress.Blob.base64StringToBlob(image, "/house.jpg");
     const formData = new FormData();
     formData.append("images", blob);
     formData.append("lotSize", listingDetails.lotSize);
